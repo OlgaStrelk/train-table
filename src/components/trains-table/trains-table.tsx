@@ -3,11 +3,11 @@ import { Table } from "react-bootstrap";
 import styles from "./trains-table.module.css";
 import {
   selectTrains,
-  fetchTrains,
   selectTrain,
 } from "../../services/slices/trainSlice";
 
 import { useAppDispatch, useAppSelector } from "../../hooks";
+import { fetchTrains } from "../../services/utils";
 
 const TrainsTable: FC = () => {
   const dispatch = useAppDispatch();

@@ -3,6 +3,7 @@ import { v4 as uuid } from "uuid";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { Train, TrainCharacteristic } from "../types";
 import { RootState } from "../store";
+import { fetchTrains } from "../utils";
 
 interface TrainState {
   trains: Train[];
