@@ -23,24 +23,27 @@ const TrainsTable: FC = () => {
 
   return (
     <section className={styles.trains}>
-      <h1 className={styles.title}>Поезда</h1>
-      <Table bordered hover>
-        <thead>
-          <tr>
-            <th className={headPadding}>Название</th>
-            <th className={headPadding}>Описание</th>
-          </tr>
-        </thead>
-        <tbody>
-          {trains &&
-            trains.map((train) => (
-              <tr key={train.id} onClick={() => handleTrainClick(train.id)}>
-                <td className={cellPadding}>{train.name}</td>
-                <td className={cellPadding}>{train.description}</td>
+      {trains && (
+        <>
+          <h1 className={styles.title}>Поезда</h1>
+          <Table bordered hover>
+            <thead>
+              <tr>
+                <th className={headPadding}>Название</th>
+                <th className={headPadding}>Описание</th>
               </tr>
-            ))}
-        </tbody>
-      </Table>
+            </thead>
+            <tbody>
+              {trains.map((train) => (
+                <tr key={train.id} onClick={() => handleTrainClick(train.id)}>
+                  <td className={cellPadding}>{train.name}</td>
+                  <td className={cellPadding}>{train.description}</td>
+                </tr>
+              ))}
+            </tbody>
+          </Table>
+        </>
+      )}
     </section>
   );
 };

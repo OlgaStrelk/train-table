@@ -6,3 +6,4 @@
 `npm install`
 `npm run dev`
 
+[Ссылка на деплой](https://olgastrelk.github.io/train-table/)
