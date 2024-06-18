@@ -6,7 +6,7 @@ import { useAppDispatch, useAppSelector } from "../../hooks";
 import {
   selectSelectedTrain,
   updateTrainCharacteristic,
-} from "../../services/reducers/trainSlice";
+} from "../../services/slices/trainSlice";
 import { TrainCharacteristic } from "../../services/types";
 
 const DetailsTable: FC = () => {
@@ -32,20 +32,21 @@ const DetailsTable: FC = () => {
     field: keyof TrainCharacteristic,
     value: string
   ) => {
-    let newCharacteristics = JSON.parse(
+    const newCharacteristics = JSON.parse(
       JSON.stringify(selectedTrain!.characteristics)
     );
     newCharacteristics[index][field] =
       field === "speed" || field === "engineAmperage"
         ? parseInt(value, 10)
         : parseFloat(value);
-
-    dispatch(
-      updateTrainCharacteristic({
-        id: selectedTrain?.id!,
-        characteristics: newCharacteristics,
-      })
-    );
+    if (selectedTrain?.id) {
+      dispatch(
+        updateTrainCharacteristic({
+          id: selectedTrain.id,
+          characteristics: newCharacteristics,
+        })
+      );
+    }
   };
 
   const handleSubmit = () => {

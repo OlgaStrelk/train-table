@@ -1,5 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit'
-import trainReducer from '../services/reducers/trainSlice'
+import trainReducer from './slices/trainSlice'
 export const store = configureStore({
   reducer: {
     train: trainReducer,

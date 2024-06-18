@@ -1,6 +1,6 @@
 import { v4 as uuid } from "uuid";
 
-import { createSlice, PayloadAction, createAsyncThunk } from "@reduxjs/toolkit";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { Train, TrainCharacteristic } from "../types";
 import { RootState } from "../store";
 
@@ -17,15 +17,6 @@ const initialState: TrainState = {
   isLoading: false,
   error: null,
 };
-
-export const fetchTrains = createAsyncThunk("trains/fetchTrains", async () => {
-  const res = await fetch(
-    "https://gist.githubusercontent.com/allbel/ae2f8ead09baf7bb66d281e3a6050261/raw/4c898f101913cd7918ab1dbfce008fa12c6d4838/mock.json"
-  );
-  return res.ok
-    ? res.json()
-    : res.json().then((err: any) => Promise.reject(err));
-});
 
 const trainSlice = createSlice({
   name: "trains",

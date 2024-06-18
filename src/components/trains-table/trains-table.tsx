@@ -5,7 +5,7 @@ import {
   selectTrains,
   fetchTrains,
   selectTrain,
-} from "../../services/reducers/trainSlice";
+} from "../../services/slices/trainSlice";
 
 import { useAppDispatch, useAppSelector } from "../../hooks";
 
