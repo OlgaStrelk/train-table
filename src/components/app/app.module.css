@@ -1,0 +1,11 @@
+.main {
+  margin: 0 auto;
+  max-width: 900px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.input:invalid{
+  border-color: red;
+  border-radius: 4px;
+}
