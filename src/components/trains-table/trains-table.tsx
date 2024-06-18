@@ -1,6 +1,6 @@
 import { useEffect, FC } from "react";
 import { Table } from "react-bootstrap";
-import styles from "./app.module.css";
+import styles from "./trains-table.module.css";
 import {
   selectTrains,
   fetchTrains,
