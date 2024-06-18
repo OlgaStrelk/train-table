@@ -60,7 +60,7 @@ const DetailsTable: FC = () => {
     <>
       {selectedTrain && (
         <section>
-          <h2>
+          <h2 className={styles.title}>
             Характеристики <br /> {selectedTrain.name}
           </h2>
           <Table bordered>
