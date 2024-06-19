@@ -83,7 +83,7 @@ const DetailsTable: FC = () => {
                         onChange={(e) =>
                           handleChange(index, "speed", e.target.value)
                         }
-                        min={1}
+                        min={0}
                         className={styles.input}
                       />
                     </td>
